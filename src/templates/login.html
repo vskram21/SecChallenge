@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+ <h3> Login </h3>
+ <div class="form-group">
+<form action="login"  method='POST'>
+    Username:<input class="form-control" name=username type="text"><br>
+    Password: <input class="form-control" name=password type="password"><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- username:admin pass: 4015bc9ee91e437d90df83fb64fbbe312d9c9f05 -->
+</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block content %}
+ <h3> Registration Page </h3>
+ <div class="form-group">
+<form action="register"  method='POST'>
+    
+    Username:<input class="form-control" name=username type="text"><br>
+    Password: <input class="form-control" name=password type="password"><br>
+    Retype Password: <input class="form-control" name=repassword type="password"><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock content %}
