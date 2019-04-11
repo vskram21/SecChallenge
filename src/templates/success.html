@@ -1,4 +1,8 @@
 {% extends "index.html" %}
 {% block content %}
- <h2> Success! You have completed the challenge!   Here is your flag 987947614649875449846516765449</h2>
+<h4> Success! You have completed the Level {{pin.level}}! 
+    Here is your flag {{ pin.flag }}</h4> 
+<h5>If you wish to continue to level {{ pin.level + 1 }}. Crack the code below</h5>
+<h6>{{ pin.hint }} </h6>
+
 {% endblock content %}

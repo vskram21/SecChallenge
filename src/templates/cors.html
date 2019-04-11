@@ -1,4 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
- <h2> In Progress </h2>
+ <h5> 
+     Read the pages response from another domain and display the message.
+ </h5>
+ <p>1. Make a post request to this page with parameter 'message'. </p>
+ <p>2. The response would contain the message and its checksum.</p>
+ <form action="cors"  method='POST'>
+    
+        Message:<input class="form-control" name=message type="text"><br>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
 {% endblock content %}
