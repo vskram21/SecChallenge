@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, session, escape, redirect, url_for,g
+from flask import Flask, render_template, request, session, escape, redirect, url_for,g, render_template_string
 import model
 from functools import wraps
 from flask_cors import cross_origin
+import pickle
 
 app = Flask(__name__, static_url_path='')
+app.config.update(TEMPLATES_AUTO_RELOAD = True)
 name = "Hello"
 # model.createdefaultusers()
 app.secret_key = b'(*&%HJVHGFHFCGHHJGHFYHF*&^*%&%&^%*(&*%&5756685756868575234HIUHIHIdfsoijdf'
@@ -32,12 +34,29 @@ def index():
     else:
         return render_template('index.html')
 
-@app.route('/serialization')
-@login_required
+@app.route('/serialization', methods=['GET', 'POST'])
+
 def serialization():
-    return render_template('serialization.html', i=escape(session['username']))
+    if request.method == 'POST':
+        obj = request.form['search']
+        pickle.load(obj)
+        return render_template_string("Pickle loaded")
+    return render_template('serialization.html',i=escape(session['username']))
+
+
+@app.route('/template', methods=['GET', 'POST'])
+
+def template():
+    if 'search' in request.args :
+        source = request.args.get('search')
+        return render_template_string(source)
+        #return render_template('template.html', i=escape(session['username']), search = request.form['search'])
+    else:
+        return render_template('template.html',i=escape(session['username']))
+
 
 @app.route('/register', methods=['GET', 'POST'])
+@login_required
 def register():
     if request.method == 'GET':
         return render_template('register.html')

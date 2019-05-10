@@ -9,6 +9,9 @@ The application has basic setup for user registration, sign in, password change 
 
 There are two options to set this project in the local machine and the other using docker 
 
+> Warning: 
+Never run this docker instance or the application exposed to the untrusted network. It could lead to compromise of the system. The author claims no responsibility of any damages caused because of this.
+
 ### Local Installation 
 
 Clone the repository, install the packages and run 
@@ -38,8 +41,8 @@ The application would be running on port 5000 on your localhost.
 
 The are two accounts in this application and the username and password listed below, 
 
-> admin - admin
-> user - user
+- admin - admin
+- user - user
 
 You could also register yourself and get your account created.
 
@@ -48,6 +51,7 @@ You could also register yourself and get your account created.
 
 Currently following vulnerabilties could be tested for,
 
-1. Code Execution  - In progress
-2. CORS - Make a cross domain request and read the response from a different domainl
-3. CSRF - Change the password of the user
+1. Template Injection
+2. Deserialization 
+3. CORS - Make a cross domain request and read the response from a different domain
+4. CSRF - Change the password of the user

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="form-group">
+    <form action="template" method='GET'>
+        Search:<input class="form-control" name=search type="text"><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <h6>
+        {% if search is defined %}
+        Search results for:
+        {{ search }}
+        {% endif %}
+    </h6>
+</div>
+{% endblock content %}

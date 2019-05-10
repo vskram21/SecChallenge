@@ -24,9 +24,10 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Vulnerable Application </div>
+      <div class="sidebar-heading">Vulnerable Web Application </div>
       <div class="list-group list-group-flush">
-        <a href="serialization" class="list-group-item list-group-item-action bg-light">Execute Code</a>
+        <a href="template" class="list-group-item list-group-item-action bg-light">Template Injection</a>
+        <a href="serialization" class="list-group-item list-group-item-action bg-light">Deserialization</a>
         <a href="cors" class="list-group-item list-group-item-action bg-light">CORS</a>
         <a href="csrf" class="list-group-item list-group-item-action bg-light">CSRF</a>
       </div>
@@ -48,7 +49,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            {% if i %}
+            {% if i is defined %}
             <li class="nav-item active">
                 <a class="nav-link" href="/">{{i}} <span class="sr-only">(current)</span></a>
             </li>
@@ -61,7 +62,7 @@
               <li class="nav-item active">
                   <a class="nav-link" href="register">Register <span class="sr-only">(current)</span></a>
                 </li>
-                {% if i %}
+                {% if i is defined%}
                 <li class="nav-item active">
                   <a class="nav-link" href="logout">Logout <span class="sr-only">(current)</span></a>
                 </li>
