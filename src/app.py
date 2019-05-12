@@ -41,7 +41,7 @@ def serialization():
         obj = request.form['search']
         pickle.load(obj)
         return render_template_string("Pickle loaded")
-    return render_template('serialization.html',i=escape(session['username']))
+    return render_template('serialization.html')
 
 
 @app.route('/template', methods=['GET', 'POST'])
@@ -52,7 +52,7 @@ def template():
         return render_template_string(source)
         #return render_template('template.html', i=escape(session['username']), search = request.form['search'])
     else:
-        return render_template('template.html',i=escape(session['username']))
+        return render_template('template.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
